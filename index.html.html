@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafelek – Profesjonalne wykończenia wnętrz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --accent: #2b6cb0;
+            --light: #f7fafc;
+            --text: #2d3748;
+            --muted: #718096;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+        .phone-btn { background: var(--accent); color: white; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%); color: white; padding: 100px 0; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.2rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.9; }
+        .cta { display: inline-block; background: white; color: var(--primary); padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: transform 0.2s; }
+        .cta:hover { transform: translateY(-2px); }
+        
+        /* Services */
+        .services { padding: 80px 0; background: var(--light); }
+        .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary); }
+        .section-subtitle { text-align: center; color: var(--muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .service-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .service-card h3 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .service-icon { font-size: 2rem; margin-bottom: 1rem; }
+        
+        /* About */
+        .about { padding: 80px 0; }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about img { width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .about h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem; }
+        
+        /* Gallery */
+        .gallery { padding: 80px 0; background: var(--light); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .gallery-item { border-radius: 12px; overflow: hidden; height: 250px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        
+        /* Contact */
+        .contact { padding: 80px 0; text-align: center; }
+        .contact-box { background: var(--primary); color: white; padding: 4rem 2rem; border-radius: 16px; max-width: 700px; margin: 0 auto; }
+        .contact-box h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem; }
+        .phone-large { font-size: 2.2rem; font-weight: 700; margin: 1.5rem 0; display: block; color: white; text-decoration: none; }
+        .phone-large:hover { text-decoration: underline; }
+        
+        footer { background: #0f2744; color: #a0aec0; text-align: center; padding: 2rem; }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .phone-btn { padding: 0.5rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Kafe<span>lek</span></div>
+                <ul class="nav-links">
+                    <li><a href="#uslugi">Usługi</a></li>
+                    <li><a href="#o-nas">O nas</a></li>
+                    <li><a href="#realizacje">Realizacje</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+                <a href="tel:531835447" class="phone-btn">531 835 447</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Profesjonalne wykończenia wnętrz</h1>
+            <p>Sufity podwieszane • Zabudowy g/k • Szpachlowanie • Tynkowanie • Malowanie<br>Natryski • Łazienki • Kafelki</p>
+            <a href="tel:531835447" class="cta">Zadzwoń: 531 835 447</a>
+        </div>
+    </section>
+
+    <section id="uslugi" class="services">
+        <div class="container">
+            <h2 class="section-title">Nasze usługi</h2>
+            <p class="section-subtitle">Kompleksowe wykończenia wnętrz na najwyższym poziomie. Każda realizacja wykonywana z dbałością o detale.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Sufity podwieszane</h3>
+                    <p>Jedno- i wielopoziomowe sufity g/k, z oświetleniem LED, idealnie równe i estetyczne.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧱</div>
+                    <h3>Zabudowy g/k</h3>
+                    <p>Ścianki działowe, zabudowy wnęk, szaf, korytarzy – precyzyjne i trwałe konstrukcje.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Szpachlowanie</h3>
+                    <p>Dokładne przygotowanie powierzchni pod malowanie lub inne wykończenia.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🖌️</div>
+                    <h3>Tynkowanie</h3>
+                    <p>Tynki gipsowe i cementowo-wapienne, gładkie i równe ściany oraz sufity.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🖌️</div>
+                    <h3>Malowanie</h3>
+                    <p>Profesjonalne malowanie ścian, sufitów i innych powierzchni – równe, czyste wykończenie.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💨</div>
+                    <h3>Natryski</h3>
+                    <p>Natryskowe nakładanie gładzi oraz farb – szybkie, równomierne i bez smug.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚿</div>
+                    <h3>Łazienki</h3>
+                    <p>Kompleksowe wykończenie łazienek – od zabudów po kafelki i detale.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔲</div>
+                    <h3>Kafelki</h3>
+                    <p>Układanie płytek na ścianach i podłogach, glazura, terakota, mozaiki – precyzyjnie i estetycznie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="o-nas" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <h2>Dlaczego Kafelek?</h2>
+                    <p style="margin-bottom: 1rem;">Specjalizujemy się w profesjonalnych wykończeniach wnętrz. Wykonujemy pełen zakres prac: od sufitów podwieszanych i zabudów g/k, przez szpachlowanie, tynkowanie i malowanie, aż po natryski, łazienki i układanie kafelków.</p>
+                    <p style="margin-bottom: 1rem;">Stawiamy na jakość, terminowość i dbałość o szczegóły. Każde zlecenie traktujemy indywidualnie – dobieramy najlepsze rozwiązania do Twojego wnętrza.</p>
+                    <p><strong>Zadzwoń i umów bezpłatną wycenę:</strong></p>
+                    <a href="tel:531835447" style="color: var(--accent); font-size: 1.4rem; font-weight: 700; text-decoration: none;">531 835 447</a>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Nowoczesna łazienka">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="realizacje" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Przykładowe realizacje</h2>
+            <p class="section-subtitle">Efekty naszej pracy mówią same za siebie</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Wnętrze po remoncie"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=80" alt="Łazienka"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Nowoczesne wnętrze"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="Kuchnia / łazienka"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b?auto=format&fit=crop&w=600&q=80" alt="Sufit i ściany"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="Łazienka z płytkami"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="contact">
+        <div class="container">
+            <div class="contact-box">
+                <h2>Skontaktuj się z nami</h2>
+                <p>Chcesz wycenić remont lub wykończenie wnętrza? Zadzwoń – odpowiemy na wszystkie pytania i umówimy wizytę.</p>
+                <a href="tel:531835447" class="phone-large">531 835 447</a>
+                <p style="margin-top: 1rem; opacity: 0.9;">Firma Kafelek<br>Wykończenia wnętrz • Sufity • Kafelki • Łazienki</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Kafelek – Profesjonalne wykończenia wnętrz. Wszystkie prawa zastrzeżone.</p>
+        </div>
+    </footer>
+</body>
+</html>
